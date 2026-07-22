@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-  <title>日本東北自由行</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
-  <style>
-    body,html{margin:0;padding:0;height:100%;overflow-x:hidden;}
-    #app{width:100%;max-width:800px;margin:auto;touch-action:none;}
-  </style>
-</head>
-<body>
-  <div id="app">
-    <!-- 來源 [1] 的原始內容全部放在這裡 -->
-     <style>
+<html lang="zh-TW"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>日本東北自由行 Web App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
         body { font-family: 'Noto Sans TC', sans-serif; background-color: #f3f4f6; -webkit-tap-highlight-color: transparent; }
         .tab-content { display: none; }
@@ -32,13 +22,13 @@
     <!-- Header -->
     <header class="bg-indigo-600 text-white p-4 sticky top-0 z-50 shadow-md flex justify-between items-center">
         <div class="flex-1">
-            <div id="header-trip-name" class="text-xl font-bold truncate">日本東北自由行</div>
+            <div id="header-trip-name" class="text-xl font-bold truncate">日本東北之行</div>
             <div id="header-trip-dest" class="text-xs opacity-80 truncate">📍 東京 | 2026-01-14 〜 2026-01-18</div>
         </div>
         <div class="flex gap-2 no-print">
             <button id="btn-mode" onclick="toggleEditMode()" class="bg-white text-indigo-600 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95 bg-orange-100 text-orange-600"><i class="fas fa-unlock"></i> <span>閱讀模式</span></button>
             <button onclick="exportFullHTML()" class="bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
-                <i class="fas fa-save"></i> <span class="hidden sm:inline">儲存最新版檔案</span>
+                <i class="fas fa-save"></i> <span class="hidden sm:inline">儲存最新檔</span>
             </button>
         </div>
     </header>
@@ -71,11 +61,11 @@
                     </div>
                     <div class="flex justify-between border-b pb-2">
                         <span class="text-gray-500">狀態</span>
-                        <input class="edit-input text-right" value="規劃中" onchange="updateData('overview', null, 'status', this.value)">
+                        <input class="edit-input text-right" value="籌備中" onchange="updateData('overview', null, 'status', this.value)">
                     </div></div>
             </div>
             <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 text-indigo-700 text-sm italic mb-6">
-                💡 提示：點選閱讀或編輯模式，編輯完成後，會自動儲存，並可點擊右上角「儲存最新版檔案」。
+                💡 提示：編輯完成後，請點擊「儲存最新檔」下載最新版本。
             </div>
         </div>
 
@@ -403,12 +393,12 @@
         // --- Initial Data ---
         const DEFAULT_DATA = {
   "overview": {
-    "tripName": "日本東北自由行",
+    "tripName": "日本東北之行",
     "destination": "東京",
     "startDate": "2026-01-14",
     "endDate": "2026-01-18",
     "companions": "全家",
-    "status": "規劃中"
+    "status": "籌備中"
   },
   "transport_stay": [
     {
@@ -818,7 +808,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `日本東北自由行_${new Date().toISOString().split('T')[0]}.html`;
+            a.download = `日本東北之行_${new Date().toISOString().split('T')[0]}.html`;
             a.click();
         }
 
@@ -830,33 +820,3 @@
 
 
 </body></html>
-  </div>
-
-  <script>
-    const app = document.getElementById('app');
-    let currentScale = 1, posX = 0, posY = 0;
-
-    const mc = new Hammer.Manager(app);
-    mc.add(new Hammer.Pinch());
-    mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL }));
-
-    mc.on('pinchstart pinchmove pinchend', ev => {
-      if (ev.type === 'pinchstart') app.dataset.startScale = currentScale;
-      if (ev.type === 'pinchmove') {
-        const start = parseFloat(app.dataset.startScale);
-        currentScale = Math.min(5, Math.max(1, start * ev.scale));
-      }
-      if (ev.type === 'pinchend') {
-        // nothing extra needed
-      }
-      app.style.transform = `translate(${posX}px, ${posY}px) scale(${currentScale})`;
-    });
-
-    mc.on('panmove', ev => {
-      posX = ev.deltaX;
-      posY = ev.deltaY;
-      app.style.transform = `translate(${posX}px, ${posY}px) scale(${currentScale})`;
-    });
-  </script>
-</body>
-</html>
