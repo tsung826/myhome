@@ -22,7 +22,7 @@
     <!-- Header -->
     <header class="bg-indigo-600 text-white p-4 sticky top-0 z-50 shadow-md flex justify-between items-center">
         <div class="flex-1">
-            <div id="header-trip-name" class="text-xl font-bold truncate">日本東北之行</div>
+            <div id="header-trip-name" class="text-xl font-bold truncate">日本東北自由行</div>
             <div id="header-trip-dest" class="text-xs opacity-80 truncate">📍 東京 | 2026-01-14 〜 2026-01-18</div>
         </div>
         <div class="flex gap-2 no-print">
@@ -393,12 +393,12 @@
         // --- Initial Data ---
         const DEFAULT_DATA = {
   "overview": {
-    "tripName": "日本東北之行",
+    "tripName": "日本東北自由行",
     "destination": "東京",
     "startDate": "2026-01-14",
     "endDate": "2026-01-18",
     "companions": "全家",
-    "status": "籌備中"
+    "status": "規劃中"
   },
   "transport_stay": [
     {
@@ -808,7 +808,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `日本東北之行_${new Date().toISOString().split('T')[0]}.html`;
+            a.download = `日本東北自由行_${new Date().toISOString().split('T')[0]}.html`;
             a.click();
         }
 
