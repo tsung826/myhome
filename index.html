@@ -1,10 +1,20 @@
-<html lang="zh-TW"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>日本東北自由行 - Web App版</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>日本東北自由行</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+  <style>
+    body,html{margin:0;padding:0;height:100%;overflow-x:hidden;}
+    #app{width:100%;max-width:800px;margin:auto;touch-action:none;}
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- 來源 [1] 的原始內容全部放在這裡 -->
+     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
         body { font-family: 'Noto Sans TC', sans-serif; background-color: #f3f4f6; -webkit-tap-highlight-color: transparent; }
         .tab-content { display: none; }
@@ -61,7 +71,7 @@
                     </div>
                     <div class="flex justify-between border-b pb-2">
                         <span class="text-gray-500">狀態</span>
-                        <input class="edit-input text-right" value="籌備中" onchange="updateData('overview', null, 'status', this.value)">
+                        <input class="edit-input text-right" value="規劃中" onchange="updateData('overview', null, 'status', this.value)">
                     </div></div>
             </div>
             <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 text-indigo-700 text-sm italic mb-6">
@@ -820,3 +830,33 @@
 
 
 </body></html>
+  </div>
+
+  <script>
+    const app = document.getElementById('app');
+    let currentScale = 1, posX = 0, posY = 0;
+
+    const mc = new Hammer.Manager(app);
+    mc.add(new Hammer.Pinch());
+    mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL }));
+
+    mc.on('pinchstart pinchmove pinchend', ev => {
+      if (ev.type === 'pinchstart') app.dataset.startScale = currentScale;
+      if (ev.type === 'pinchmove') {
+        const start = parseFloat(app.dataset.startScale);
+        currentScale = Math.min(5, Math.max(1, start * ev.scale));
+      }
+      if (ev.type === 'pinchend') {
+        // nothing extra needed
+      }
+      app.style.transform = `translate(${posX}px, ${posY}px) scale(${currentScale})`;
+    });
+
+    mc.on('panmove', ev => {
+      posX = ev.deltaX;
+      posY = ev.deltaY;
+      app.style.transform = `translate(${posX}px, ${posY}px) scale(${currentScale})`;
+    });
+  </script>
+</body>
+</html>
