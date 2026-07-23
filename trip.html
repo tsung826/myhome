@@ -13,8 +13,7 @@
 </head>
 <body>
   <div id="app">
-    <!-- 來源 [1] 的原始內容全部放在這裡 -->
-    <style>
+     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
         body { font-family: 'Noto Sans TC', sans-serif; background-color: #f3f4f6; -webkit-tap-highlight-color: transparent; }
         .tab-content { display: none; }
@@ -32,13 +31,13 @@
     <!-- Header -->
     <header class="bg-indigo-600 text-white p-4 sticky top-0 z-50 shadow-md flex justify-between items-center">
         <div class="flex-1">
-            <div id="header-trip-name" class="text-xl font-bold truncate">日本東北之行</div>
+            <div id="header-trip-name" class="text-xl font-bold truncate">日本東北自由行</div>
             <div id="header-trip-dest" class="text-xs opacity-80 truncate">📍 東京 | 2026-01-14 〜 2026-01-18</div>
         </div>
         <div class="flex gap-2 no-print">
             <button id="btn-mode" onclick="toggleEditMode()" class="bg-white text-indigo-600 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95 bg-orange-100 text-orange-600"><i class="fas fa-unlock"></i> <span>閱讀模式</span></button>
             <button onclick="exportFullHTML()" class="bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
-                <i class="fas fa-save"></i> <span class="hidden sm:inline">儲存最新檔</span>
+                <i class="fas fa-save"></i> <span class="hidden sm:inline">儲存最新版檔案</span>
             </button>
         </div>
     </header>
@@ -75,7 +74,7 @@
                     </div></div>
             </div>
             <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 text-indigo-700 text-sm italic mb-6">
-                💡 提示：編輯完成後，請點擊「儲存最新檔」下載最新版本。
+                💡 提示：點選閱讀或編輯模式，編輯完成後，會自動儲存，並可點擊右上角「儲存最新版檔案」。
             </div>
         </div>
 
@@ -403,12 +402,12 @@
         // --- Initial Data ---
         const DEFAULT_DATA = {
   "overview": {
-    "tripName": "日本東北之行",
+    "tripName": "日本東北自由行",
     "destination": "東京",
     "startDate": "2026-01-14",
     "endDate": "2026-01-18",
     "companions": "全家",
-    "status": "籌備中"
+    "status": "規劃中"
   },
   "transport_stay": [
     {
@@ -818,7 +817,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `日本東北之行_${new Date().toISOString().split('T')[0]}.html`;
+            a.download = `日本東北自由行_${new Date().toISOString().split('T')[0]}.html`;
             a.click();
         }
 
@@ -830,7 +829,7 @@
 
 
 </body></html>
-   </div>
+  </div>
 
   <script>
     const app = document.getElementById('app');
