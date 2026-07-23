@@ -1,6 +1,7 @@
 <html lang="zh-TW"><head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 修正 viewport：允許雙指手勢放大操作 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>日本東北自由行 Web App</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,14 +17,14 @@
             .tab-content { display: block !important; }
         }
     </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.bottom-0{bottom:0px}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.-right-2{right:-0.5rem}.right-2{right:0.5rem}.top-1\/2{top:50%}.top-2{top:0.5rem}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-1{margin-top:0.25rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.ml-2{margin-left:0.5rem}.ml-3{margin-left:0.75rem}.mr-1{margin-right:0.25rem}.mt-1\.5{margin-top:0.375rem}.mt-2{margin-top:0.5rem}.inline-block{display:inline-block}.flex{display:flex}.hidden{display:none}.h-4{height:1rem}.h-5{height:1.25rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-12{width:3rem}.w-16{width:4rem}.w-20{width:5rem}.w-24{width:6rem}.w-32{width:8rem}.w-full{width:100%}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-t-4{border-top-width:4px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-indigo-100{--tw-border-opacity:1;border-color:rgb(224 231 255 / var(--tw-border-opacity, 1))}.border-indigo-500{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-indigo-400{--tw-border-opacity:1;border-color:rgb(129 140 248 / var(--tw-border-opacity, 1))}.border-orange-400{--tw-border-opacity:1;border-color:rgb(251 146 60 / var(--tw-border-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-indigo-800{--tw-bg-opacity:1;background-color:rgb(55 48 163 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-orange-100{--tw-bg-opacity:1;background-color:rgb(255 237 213 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-3{padding:0.75rem}.p-2{padding:0.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.pb-24{padding-bottom:6rem}.pb-2{padding-bottom:0.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.italic{font-style:italic}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-orange-600{--tw-text-opacity:1;color:rgb(234 88 12 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.line-through{-webkit-text-decoration-line:line-through;text-decoration-line:line-through}.accent-indigo-600{accent-color:#4f46e5}.opacity-80{opacity:0.8}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.last\:border-b-0:last-child{border-bottom-width:0px}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:inline{display:inline}}</style></head>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.bottom-0{bottom:0px}.left-0{left:0px}.right-0{right:0px}.top-0{top:0px}.-right-2{right:-0.5rem}.right-2{right:0.5rem}.top-1\/2{top:50%}.top-2{top:0.5rem}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-1{margin-top:0.25rem}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.ml-2{margin-left:0.5rem}.ml-3{margin-left:0.75rem}.mr-1{margin-right:0.25rem}.mt-1\.5{margin-top:0.375rem}.mt-2{margin-top:0.5rem}.inline-block{display:inline-block}.flex{display:flex}.hidden{display:none}.h-4{height:1rem}.h-5{height:1.25rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-12{width:3rem}.w-16{width:4rem}.w-20{width:5rem}.w-24{width:6rem}.w-32{width:8rem}.w-full{width:100%}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-between:space-between}.justify-around{justify-around:space-around}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-xl{border-radius:0.75rem}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-t{border-top-width:1px}.border-t-4{border-top-width:4px}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-indigo-100{--tw-border-opacity:1;border-color:rgb(224 231 255 / var(--tw-border-opacity, 1))}.border-indigo-500{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}.border-gray-100{--tw-border-opacity:1;border-color:rgb(243 244 246 / var(--tw-border-opacity, 1))}.border-indigo-400{--tw-border-opacity:1;border-color:rgb(129 140 248 / var(--tw-border-opacity, 1))}.border-orange-400{--tw-border-opacity:1;border-color:rgb(251 146 60 / var(--tw-border-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-indigo-800{--tw-bg-opacity:1;background-color:rgb(55 48 163 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-orange-100{--tw-bg-opacity:1;background-color:rgb(255 237 213 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-3{padding:0.75rem}.p-2{padding:0.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.pb-24{padding-bottom:6rem}.pb-2{padding-bottom:0.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-light{font-weight:300}.font-medium{font-weight:500}.uppercase{text-transform:uppercase}.italic{font-style:italic}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-indigo-500{--tw-text-opacity:1;color:rgb(99 102 241 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-indigo-700{--tw-text-opacity:1;color:rgb(67 56 202 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-orange-600{--tw-text-opacity:1;color:rgb(234 88 12 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.line-through{-webkit-text-decoration-line:line-through;text-decoration-line:line-through}.accent-indigo-600{accent-color:#4f46e5}.opacity-80{opacity:0.8}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.last\:border-b-0:last-child{border-bottom-width:0px}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:inline{display:inline}}</style></head>
 <body class="pb-24">
 
     <!-- Header -->
     <header class="bg-indigo-600 text-white p-4 sticky top-0 z-50 shadow-md flex justify-between items-center">
         <div class="flex-1">
             <div id="header-trip-name" class="text-xl font-bold truncate">日本東北之行</div>
-            <div id="header-trip-dest" class="text-xs opacity-80 truncate">📍 東京 | 2026-01-14 〜 2026-01-18</div>
+            <div id="header-trip-dest" class="text-xs opacity-80 truncate">📍 東京 | 2027-01-14 〜 2027-01-18</div>
         </div>
         <div class="flex gap-2 no-print">
             <button id="btn-mode" onclick="toggleEditMode()" class="bg-white text-indigo-600 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95 bg-orange-100 text-orange-600"><i class="fas fa-unlock"></i> <span>閱讀模式</span></button>
@@ -45,23 +46,23 @@
                 <div class="space-y-3 text-sm" id="overview-editor">
                     <div class="flex justify-between border-b pb-2">
                         <span class="text-gray-500">目的地</span>
-                        <input class="edit-input text-right" value="東京" onchange="updateData('overview', null, 'destination', this.value)">
+                        <span class="font-medium text-gray-800">東京</span>
                     </div>
                     <div class="flex justify-between border-b pb-2">
                         <span class="text-gray-500">出發日期</span>
-                        <input class="edit-input text-right" value="2026-01-20" onchange="updateData('overview', null, 'startDate', this.value)">
+                        <span class="font-medium text-gray-800">2027-01-14</span>
                     </div>
                     <div class="flex justify-between border-b pb-2">
                         <span class="text-gray-500">回程日期</span>
-                        <input class="edit-input text-right" value="2026-01-24" onchange="updateData('overview', null, 'endDate', this.value)">
+                        <span class="font-medium text-gray-800">2027-01-18</span>
                     </div>
                     <div class="flex justify-between border-b pb-2">
                         <span class="text-gray-500">旅伴</span>
-                        <input class="edit-input text-right" value="全家" onchange="updateData('overview', null, 'companions', this.value)">
+                        <span class="font-medium text-gray-800">全家</span>
                     </div>
                     <div class="flex justify-between border-b pb-2">
                         <span class="text-gray-500">狀態</span>
-                        <input class="edit-input text-right" value="籌備中" onchange="updateData('overview', null, 'status', this.value)">
+                        <span class="font-medium text-gray-800">規劃中</span>
                     </div></div>
             </div>
             <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100 text-indigo-700 text-sm italic mb-6">
@@ -79,85 +80,85 @@
             </div>
             <div id="itinerary-list" class="space-y-6"><div>
                     <div class="flex justify-between items-center mb-3">
-                        <h3 class="font-bold text-gray-600 flex items-center gap-2"><i class="far fa-calendar"></i> <input class="edit-input w-32" value="2026-01-20" onchange="updateDate('2026-01-20', this.value)"></h3>
+                        <h3 class="font-bold text-gray-600 flex items-center gap-2"><i class="far fa-calendar"></i> 2026-01-20</h3>
                     </div>
                         <div class="bg-white p-4 rounded-xl shadow-sm mb-3 border-l-4 border-indigo-400 flex items-start gap-3 relative">
                             <input type="checkbox" class="mt-1.5 w-4 h-4 rounded" onchange="updateData('itinerary', 0, 'done', this.checked)">
                             <div class="flex-1">
                                 <div class="flex justify-between items-center mb-1">
-                                    <input class="edit-input w-20 text-xs" value="12:00" onchange="updateData('itinerary', 0, 'time', this.value)">
-                                    <input class="edit-input w-16 text-xs" value="住宿" onchange="updateData('itinerary', 0, 'category', this.value)">
+                                    <span class="text-xs font-bold text-indigo-500">12:00</span>
+                                    <span class="text-[10px] px-1.5 py-0.5 bg-gray-100 rounded text-gray-500">住宿</span>
                                 </div>
-                                <input class="edit-input font-bold mb-1" value="抵達飯店 Check-in" onchange="updateData('itinerary', 0, 'activity', this.value)">
+                                <div class="font-bold text-gray-800">抵達飯店 Check-in</div>
                                 <div class="text-xs text-gray-500 flex items-center gap-1">
-                                    <i class="fas fa-map-marker-alt"></i> <input class="edit-input" value="新宿飯店" onchange="updateData('itinerary', 0, 'location', this.value)">
+                                    <i class="fas fa-map-marker-alt"></i> 新宿飯店
                                 </div>
-                                <div class="text-xs text-gray-400 mt-2 italic"><input class="edit-input" value="寄放行李" onchange="updateData('itinerary', 0, 'notes', this.value)"></div>
+                                <div class="text-xs text-gray-400 mt-2 italic">寄放行李</div>
                             </div>
-                            <button onclick="deleteItem('itinerary', 0)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                            
                         </div>
                         <div class="bg-white p-4 rounded-xl shadow-sm mb-3 border-l-4 border-indigo-400 flex items-start gap-3 relative">
                             <input type="checkbox" class="mt-1.5 w-4 h-4 rounded" onchange="updateData('itinerary', 1, 'done', this.checked)">
                             <div class="flex-1">
                                 <div class="flex justify-between items-center mb-1">
-                                    <input class="edit-input w-20 text-xs" value="14:00" onchange="updateData('itinerary', 1, 'time', this.value)">
-                                    <input class="edit-input w-16 text-xs" value="景點" onchange="updateData('itinerary', 1, 'category', this.value)">
+                                    <span class="text-xs font-bold text-indigo-500">14:00</span>
+                                    <span class="text-[10px] px-1.5 py-0.5 bg-gray-100 rounded text-gray-500">景點</span>
                                 </div>
-                                <input class="edit-input font-bold mb-1" value="淺草寺參拜" onchange="updateData('itinerary', 1, 'activity', this.value)">
+                                <div class="font-bold text-gray-800">淺草寺參拜</div>
                                 <div class="text-xs text-gray-500 flex items-center gap-1">
-                                    <i class="fas fa-map-marker-alt"></i> <input class="edit-input" value="淺草" onchange="updateData('itinerary', 1, 'location', this.value)">
+                                    <i class="fas fa-map-marker-alt"></i> 淺草
                                 </div>
-                                <div class="text-xs text-gray-400 mt-2 italic"><input class="edit-input" value="拍雷門大燈籠" onchange="updateData('itinerary', 1, 'notes', this.value)"></div>
+                                <div class="text-xs text-gray-400 mt-2 italic">拍雷門大燈籠</div>
                             </div>
-                            <button onclick="deleteItem('itinerary', 1)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                            
                         </div>
                         <div class="bg-white p-4 rounded-xl shadow-sm mb-3 border-l-4 border-indigo-400 flex items-start gap-3 relative">
                             <input type="checkbox" class="mt-1.5 w-4 h-4 rounded" onchange="updateData('itinerary', 2, 'done', this.checked)">
                             <div class="flex-1">
                                 <div class="flex justify-between items-center mb-1">
-                                    <input class="edit-input w-20 text-xs" value="18:00" onchange="updateData('itinerary', 2, 'time', this.value)">
-                                    <input class="edit-input w-16 text-xs" value="美食" onchange="updateData('itinerary', 2, 'category', this.value)">
+                                    <span class="text-xs font-bold text-indigo-500">18:00</span>
+                                    <span class="text-[10px] px-1.5 py-0.5 bg-gray-100 rounded text-gray-500">美食</span>
                                 </div>
-                                <input class="edit-input font-bold mb-1" value="晚餐-敘敘苑" onchange="updateData('itinerary', 2, 'activity', this.value)">
+                                <div class="font-bold text-gray-800">晚餐-敘敘苑</div>
                                 <div class="text-xs text-gray-500 flex items-center gap-1">
-                                    <i class="fas fa-map-marker-alt"></i> <input class="edit-input" value="新宿店" onchange="updateData('itinerary', 2, 'location', this.value)">
+                                    <i class="fas fa-map-marker-alt"></i> 新宿店
                                 </div>
-                                <div class="text-xs text-gray-400 mt-2 italic"><input class="edit-input" value="已預約 18:00" onchange="updateData('itinerary', 2, 'notes', this.value)"></div>
+                                <div class="text-xs text-gray-400 mt-2 italic">已預約 18:00</div>
                             </div>
-                            <button onclick="deleteItem('itinerary', 2)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                            
                         </div></div><div>
                     <div class="flex justify-between items-center mb-3">
-                        <h3 class="font-bold text-gray-600 flex items-center gap-2"><i class="far fa-calendar"></i> <input class="edit-input w-32" value="" onchange="updateDate('', this.value)"></h3>
+                        <h3 class="font-bold text-gray-600 flex items-center gap-2"><i class="far fa-calendar"></i> </h3>
                     </div>
                         <div class="bg-white p-4 rounded-xl shadow-sm mb-3 border-l-4 border-indigo-400 flex items-start gap-3 relative">
                             <input type="checkbox" class="mt-1.5 w-4 h-4 rounded" onchange="updateData('itinerary', 3, 'done', this.checked)">
                             <div class="flex-1">
                                 <div class="flex justify-between items-center mb-1">
-                                    <input class="edit-input w-20 text-xs" value="12:00" onchange="updateData('itinerary', 3, 'time', this.value)">
-                                    <input class="edit-input w-16 text-xs" value="景點" onchange="updateData('itinerary', 3, 'category', this.value)">
+                                    <span class="text-xs font-bold text-indigo-500">12:00</span>
+                                    <span class="text-[10px] px-1.5 py-0.5 bg-gray-100 rounded text-gray-500">景點</span>
                                 </div>
-                                <input class="edit-input font-bold mb-1" value="新活動" onchange="updateData('itinerary', 3, 'activity', this.value)">
+                                <div class="font-bold text-gray-800">新活動</div>
                                 <div class="text-xs text-gray-500 flex items-center gap-1">
-                                    <i class="fas fa-map-marker-alt"></i> <input class="edit-input" value="" onchange="updateData('itinerary', 3, 'location', this.value)">
+                                    <i class="fas fa-map-marker-alt"></i> 
                                 </div>
-                                <div class="text-xs text-gray-400 mt-2 italic"><input class="edit-input" value="" onchange="updateData('itinerary', 3, 'notes', this.value)"></div>
+                                <div class="text-xs text-gray-400 mt-2 italic"></div>
                             </div>
-                            <button onclick="deleteItem('itinerary', 3)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                            
                         </div>
                         <div class="bg-white p-4 rounded-xl shadow-sm mb-3 border-l-4 border-indigo-400 flex items-start gap-3 relative">
                             <input type="checkbox" class="mt-1.5 w-4 h-4 rounded" onchange="updateData('itinerary', 4, 'done', this.checked)">
                             <div class="flex-1">
                                 <div class="flex justify-between items-center mb-1">
-                                    <input class="edit-input w-20 text-xs" value="12:00" onchange="updateData('itinerary', 4, 'time', this.value)">
-                                    <input class="edit-input w-16 text-xs" value="景點" onchange="updateData('itinerary', 4, 'category', this.value)">
+                                    <span class="text-xs font-bold text-indigo-500">12:00</span>
+                                    <span class="text-[10px] px-1.5 py-0.5 bg-gray-100 rounded text-gray-500">景點</span>
                                 </div>
-                                <input class="edit-input font-bold mb-1" value="新活動" onchange="updateData('itinerary', 4, 'activity', this.value)">
+                                <div class="font-bold text-gray-800">新活動</div>
                                 <div class="text-xs text-gray-500 flex items-center gap-1">
-                                    <i class="fas fa-map-marker-alt"></i> <input class="edit-input" value="" onchange="updateData('itinerary', 4, 'location', this.value)">
+                                    <i class="fas fa-map-marker-alt"></i> 
                                 </div>
-                                <div class="text-xs text-gray-400 mt-2 italic"><input class="edit-input" value="" onchange="updateData('itinerary', 4, 'notes', this.value)"></div>
+                                <div class="text-xs text-gray-400 mt-2 italic"></div>
                             </div>
-                            <button onclick="deleteItem('itinerary', 4)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                            
                         </div></div></div>
         </div>
 
@@ -172,58 +173,58 @@
             <div id="transport-list" class="space-y-3">
                     <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <input class="edit-input w-20 text-[10px] font-bold" value="機票" onchange="updateData('transport_stay', 0, 'category', this.value)">
-                            <input class="edit-input w-24 text-xs" value="2026-01-20 08:00" onchange="updateData('transport_stay', 0, 'date', this.value)">
+                            <span class="text-[10px] font-bold px-2 py-0.5 bg-indigo-100 text-indigo-600 rounded-full uppercase">機票</span>
+                            <span class="text-xs text-gray-400">2026-01-20 07:55</span>
                         </div>
-                        <input class="edit-input font-bold mb-1" value="長榮航空 BR123" onchange="updateData('transport_stay', 0, 'item', this.value)">
-                        <div class="text-xs text-gray-500 mt-1 italic"><input class="edit-input" value="ABC12345" onchange="updateData('transport_stay', 0, 'conf', this.value)"></div>
-                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> <input class="edit-input" value="桃園機場 T1" onchange="updateData('transport_stay', 0, 'location', this.value)"></div>
-                        <input class="edit-input text-xs text-gray-400 mt-1" value="記得提前3小時到達" onchange="updateData('transport_stay', 0, 'notes', this.value)">
-                        <button onclick="deleteItem('transport_stay', 0)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        <div class="font-bold text-gray-800">長榮航空 BR184</div>
+                        <div class="text-xs text-gray-500 mt-1 italic">編號: 到東京成田機場</div>
+                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> 桃園機場 T2</div>
+                        <div class="text-xs text-gray-400 mt-1 italic">備註: 記得提前3小時到達</div>
+                        
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <input class="edit-input w-20 text-[10px] font-bold" value="飯店" onchange="updateData('transport_stay', 1, 'category', this.value)">
-                            <input class="edit-input w-24 text-xs" value="01/14-01/18" onchange="updateData('transport_stay', 1, 'date', this.value)">
+                            <span class="text-[10px] font-bold px-2 py-0.5 bg-indigo-100 text-indigo-600 rounded-full uppercase">飯店</span>
+                            <span class="text-xs text-gray-400">01/14-01/18</span>
                         </div>
-                        <input class="edit-input font-bold mb-1" value="銀山溫泉能登屋" onchange="updateData('transport_stay', 1, 'item', this.value)">
-                        <div class="text-xs text-gray-500 mt-1 italic"><input class="edit-input" value="CONF9876" onchange="updateData('transport_stay', 1, 'conf', this.value)"></div>
-                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> <input class="edit-input" value="東京都新宿區..." onchange="updateData('transport_stay', 1, 'location', this.value)"></div>
-                        <input class="edit-input text-xs text-gray-400 mt-1" value="含早餐, 需出示護照" onchange="updateData('transport_stay', 1, 'notes', this.value)">
-                        <button onclick="deleteItem('transport_stay', 1)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        <div class="font-bold text-gray-800">銀山溫泉能登屋</div>
+                        <div class="text-xs text-gray-500 mt-1 italic">編號: CONF9876</div>
+                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> 東京都新宿區...</div>
+                        <div class="text-xs text-gray-400 mt-1 italic">備註: 含早餐, 需出示護照</div>
+                        
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <input class="edit-input w-20 text-[10px] font-bold" value="租車" onchange="updateData('transport_stay', 2, 'category', this.value)">
-                            <input class="edit-input w-24 text-xs" value="2026-01-21 10:00" onchange="updateData('transport_stay', 2, 'date', this.value)">
+                            <span class="text-[10px] font-bold px-2 py-0.5 bg-indigo-100 text-indigo-600 rounded-full uppercase">租車</span>
+                            <span class="text-xs text-gray-400">2026-01-21 10:00</span>
                         </div>
-                        <input class="edit-input font-bold mb-1" value="Toyota Rent" onchange="updateData('transport_stay', 2, 'item', this.value)">
-                        <div class="text-xs text-gray-500 mt-1 italic"><input class="edit-input" value="REN7788" onchange="updateData('transport_stay', 2, 'conf', this.value)"></div>
-                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> <input class="edit-input" value="成田機場櫃檯" onchange="updateData('transport_stay', 2, 'location', this.value)"></div>
-                        <input class="edit-input text-xs text-gray-400 mt-1" value="需國際駕照" onchange="updateData('transport_stay', 2, 'notes', this.value)">
-                        <button onclick="deleteItem('transport_stay', 2)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        <div class="font-bold text-gray-800">Toyota Rent</div>
+                        <div class="text-xs text-gray-500 mt-1 italic">編號: REN7788</div>
+                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> 成田機場櫃檯</div>
+                        <div class="text-xs text-gray-400 mt-1 italic">備註: 需國際駕照</div>
+                        
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <input class="edit-input w-20 text-[10px] font-bold" value="飯店" onchange="updateData('transport_stay', 3, 'category', this.value)">
-                            <input class="edit-input w-24 text-xs" value="" onchange="updateData('transport_stay', 3, 'date', this.value)">
+                            <span class="text-[10px] font-bold px-2 py-0.5 bg-indigo-100 text-indigo-600 rounded-full uppercase">飯店</span>
+                            <span class="text-xs text-gray-400"></span>
                         </div>
-                        <input class="edit-input font-bold mb-1" value="名稱" onchange="updateData('transport_stay', 3, 'item', this.value)">
-                        <div class="text-xs text-gray-500 mt-1 italic"><input class="edit-input" value="" onchange="updateData('transport_stay', 3, 'conf', this.value)"></div>
-                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> <input class="edit-input" value="" onchange="updateData('transport_stay', 3, 'location', this.value)"></div>
-                        <input class="edit-input text-xs text-gray-400 mt-1" value="" onchange="updateData('transport_stay', 3, 'notes', this.value)">
-                        <button onclick="deleteItem('transport_stay', 3)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        <div class="font-bold text-gray-800">名稱</div>
+                        <div class="text-xs text-gray-500 mt-1 italic">編號: </div>
+                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> </div>
+                        <div class="text-xs text-gray-400 mt-1 italic">備註: </div>
+                        
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 relative">
                         <div class="flex justify-between items-start mb-2">
-                            <input class="edit-input w-20 text-[10px] font-bold" value="飯店" onchange="updateData('transport_stay', 4, 'category', this.value)">
-                            <input class="edit-input w-24 text-xs" value="" onchange="updateData('transport_stay', 4, 'date', this.value)">
+                            <span class="text-[10px] font-bold px-2 py-0.5 bg-indigo-100 text-indigo-600 rounded-full uppercase">飯店</span>
+                            <span class="text-xs text-gray-400"></span>
                         </div>
-                        <input class="edit-input font-bold mb-1" value="名稱" onchange="updateData('transport_stay', 4, 'item', this.value)">
-                        <div class="text-xs text-gray-500 mt-1 italic"><input class="edit-input" value="" onchange="updateData('transport_stay', 4, 'conf', this.value)"></div>
-                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> <input class="edit-input" value="" onchange="updateData('transport_stay', 4, 'location', this.value)"></div>
-                        <input class="edit-input text-xs text-gray-400 mt-1" value="" onchange="updateData('transport_stay', 4, 'notes', this.value)">
-                        <button onclick="deleteItem('transport_stay', 4)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        <div class="font-bold text-gray-800">名稱</div>
+                        <div class="text-xs text-gray-500 mt-1 italic">編號: </div>
+                        <div class="text-sm text-gray-600 mt-2"><i class="fas fa-map-pin mr-1 text-gray-400"></i> </div>
+                        <div class="text-xs text-gray-400 mt-1 italic">備註: </div>
+                        
                     </div></div>
         </div>
 
@@ -238,27 +239,27 @@
             <div id="food-list" class="space-y-3">
                     <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-orange-400 relative">
                         <div class="flex justify-between items-center mb-2">
-                            <input class="edit-input font-bold" value="敘敘苑" onchange="updateData('restaurants', 0, 'name', this.value)">
-                            <input class="edit-input text-[10px] w-20" value="已確認" onchange="updateData('restaurants', 0, 'status', this.value)">
+                            <div class="font-bold text-gray-800">敘敘苑</div>
+                            <span class="text-[10px] px-1.5 py-0.5 bg-green-100 text-green-700 rounded font-bold">已確認</span>
                         </div>
                         <div class="text-xs text-gray-500 space-y-1">
-                            <div>📅 <input class="edit-input w-24 inline-block" value="2026-01-20" onchange="updateData('restaurants', 0, 'date', this.value)"> <input class="edit-input w-16 inline-block" value="18:00" onchange="updateData('restaurants', 0, 'time', this.value)"> | 👥 <input class="edit-input w-12 inline-block" value="4" onchange="updateData('restaurants', 0, 'pax', this.value)">人</div>
-                            <div class="text-orange-600 font-medium">✨ 必點: <input class="edit-input" value="頂級特選牛" onchange="updateData('restaurants', 0, 'mustOrder', this.value)"></div>
-                            <div class="text-gray-400 italic font-light">確認碼: <input class="edit-input" value="Order_SXY123" onchange="updateData('restaurants', 0, 'conf', this.value)"></div>
+                            <div>📅 2026-01-20 18:00 | 👥 4人</div>
+                            <div class="text-orange-600 font-medium">✨ 必點: 頂級特選牛</div>
+                            <div class="text-gray-400 italic font-light">確認碼: Order_SXY123</div>
                         </div>
-                        <button onclick="deleteItem('restaurants', 0)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow-sm border-l-4 border-orange-400 relative">
                         <div class="flex justify-between items-center mb-2">
-                            <input class="edit-input font-bold" value="築地壽司" onchange="updateData('restaurants', 1, 'name', this.value)">
-                            <input class="edit-input text-[10px] w-20" value="待定" onchange="updateData('restaurants', 1, 'status', this.value)">
+                            <div class="font-bold text-gray-800">築地壽司</div>
+                            <span class="text-[10px] px-1.5 py-0.5 bg-gray-100 text-gray-600 rounded font-bold">待定</span>
                         </div>
                         <div class="text-xs text-gray-500 space-y-1">
-                            <div>📅 <input class="edit-input w-24 inline-block" value="2026-01-22" onchange="updateData('restaurants', 1, 'date', this.value)"> <input class="edit-input w-16 inline-block" value="11:30" onchange="updateData('restaurants', 1, 'time', this.value)"> | 👥 <input class="edit-input w-12 inline-block" value="4" onchange="updateData('restaurants', 1, 'pax', this.value)">人</div>
-                            <div class="text-orange-600 font-medium">✨ 必點: <input class="edit-input" value="職人特選握壽司" onchange="updateData('restaurants', 1, 'mustOrder', this.value)"></div>
-                            <div class="text-gray-400 italic font-light">確認碼: <input class="edit-input" value="Name: Zhang" onchange="updateData('restaurants', 1, 'conf', this.value)"></div>
+                            <div>📅 2026-01-22 11:30 | 👥 4人</div>
+                            <div class="text-orange-600 font-medium">✨ 必點: 職人特選握壽司</div>
+                            <div class="text-gray-400 italic font-light">確認碼: Name: Zhang</div>
                         </div>
-                        <button onclick="deleteItem('restaurants', 1)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        
                     </div></div>
         </div>
 
@@ -274,26 +275,26 @@
                     <div class="flex items-center p-4 border-b last:border-b-0 hover:bg-gray-50 transition-colors cursor-pointer relative">
                         <input type="checkbox" class="w-5 h-5 rounded text-indigo-600 accent-indigo-600" onchange="updateData('packingList', 0, 'packed', this.checked)">
                         <div class="ml-3 flex-1">
-                            <input class="edit-input text-sm font-medium mb-1" value="護照" onchange="updateData('packingList', 0, 'item', this.value)">
-                            <div class="flex gap-1"><input class="edit-input text-[10px] w-16" value="證件" onchange="updateData('packingList', 0, 'category', this.value)"> <input class="edit-input text-[10px] w-16" value="必備" onchange="updateData('packingList', 0, 'priority', this.value)"></div>
+                            <div class="text-sm font-medium text-gray-800">護照 <span class="text-xs text-gray-400">x1</span></div>
+                            <div class="text-[10px] text-gray-400">證件 | 必備</div>
                         </div>
-                        <button onclick="deleteItem('packingList', 0)" class="text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        
                     </div>
                     <div class="flex items-center p-4 border-b last:border-b-0 hover:bg-gray-50 transition-colors cursor-pointer relative">
                         <input type="checkbox" class="w-5 h-5 rounded text-indigo-600 accent-indigo-600" onchange="updateData('packingList', 1, 'packed', this.checked)">
                         <div class="ml-3 flex-1">
-                            <input class="edit-input text-sm font-medium mb-1" value="行電轉接頭" onchange="updateData('packingList', 1, 'item', this.value)">
-                            <div class="flex gap-1"><input class="edit-input text-[10px] w-16" value="電子" onchange="updateData('packingList', 1, 'category', this.value)"> <input class="edit-input text-[10px] w-16" value="必備" onchange="updateData('packingList', 1, 'priority', this.value)"></div>
+                            <div class="text-sm font-medium text-gray-800">行動電源及充電線 <span class="text-xs text-gray-400">x2</span></div>
+                            <div class="text-[10px] text-gray-400">電子 | 必備</div>
                         </div>
-                        <button onclick="deleteItem('packingList', 1)" class="text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        
                     </div>
                     <div class="flex items-center p-4 border-b last:border-b-0 hover:bg-gray-50 transition-colors cursor-pointer relative">
                         <input type="checkbox" class="w-5 h-5 rounded text-indigo-600 accent-indigo-600" onchange="updateData('packingList', 2, 'packed', this.checked)">
                         <div class="ml-3 flex-1">
-                            <input class="edit-input text-sm font-medium mb-1" value="綜合感冒藥" onchange="updateData('packingList', 2, 'item', this.value)">
-                            <div class="flex gap-1"><input class="edit-input text-[10px] w-16" value="藥品" onchange="updateData('packingList', 2, 'category', this.value)"> <input class="edit-input text-[10px] w-16" value="建議" onchange="updateData('packingList', 2, 'priority', this.value)"></div>
+                            <div class="text-sm font-medium text-gray-800">綜合感冒藥 <span class="text-xs text-gray-400">x1</span></div>
+                            <div class="text-[10px] text-gray-400">藥品 | 建議</div>
                         </div>
-                        <button onclick="deleteItem('packingList', 2)" class="text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        
                     </div></div>
         </div>
 
@@ -308,25 +309,36 @@
             <div id="budget-list" class="space-y-3">
                     <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center relative">
                         <div class="text-sm flex-1">
-                            <input class="edit-input font-bold mb-1" value="機票" onchange="updateData('budget', 0, 'item', this.value)">
-                            <div class="flex gap-1"><input class="edit-input text-[10px] w-16" value="交通" onchange="updateData('budget', 0, 'category', this.value)"> <input class="edit-input text-[10px] w-16" value="信用卡" onchange="updateData('budget', 0, 'method', this.value)"></div>
+                            <div class="font-bold text-gray-800">來回機票</div>
+                            <div class="text-[10px] text-gray-400">交通 | 信用卡</div>
                         </div>
                         <div class="text-right ml-2">
-                            <div class="flex items-center justify-end gap-1"><input class="edit-input w-16 text-right text-sm font-bold" value="14500" onchange="updateData('budget', 0, 'actual', this.value)"> <input class="edit-input w-12 text-xs" value="TWD" onchange="updateData('budget', 0, 'currency', this.value)"></div>
-                            <input class="edit-input w-16 text-right text-[10px] text-gray-400" value="15000" onchange="updateData('budget', 0, 'est', this.value)">
+                            <div class="text-sm font-bold text-gray-800">67340 <span class="text-[10px]">TWD</span></div>
+                            <div class="text-[10px] text-gray-400 line-through">預算 15000</div>
                         </div>
-                        <button onclick="deleteItem('budget', 0)" class="absolute -right-2 top-1/2 -translate-y-1/2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        
                     </div>
                     <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center relative">
                         <div class="text-sm flex-1">
-                            <input class="edit-input font-bold mb-1" value="晚餐" onchange="updateData('budget', 1, 'item', this.value)">
-                            <div class="flex gap-1"><input class="edit-input text-[10px] w-16" value="食宿" onchange="updateData('budget', 1, 'category', this.value)"> <input class="edit-input text-[10px] w-16" value="現金" onchange="updateData('budget', 1, 'method', this.value)"></div>
+                            <div class="font-bold text-gray-800">午餐</div>
+                            <div class="text-[10px] text-gray-400">食宿 | 現金</div>
                         </div>
                         <div class="text-right ml-2">
-                            <div class="flex items-center justify-end gap-1"><input class="edit-input w-16 text-right text-sm font-bold" value="3200" onchange="updateData('budget', 1, 'actual', this.value)"> <input class="edit-input w-12 text-xs" value="JPY" onchange="updateData('budget', 1, 'currency', this.value)"></div>
-                            <input class="edit-input w-16 text-right text-[10px] text-gray-400" value="3000" onchange="updateData('budget', 1, 'est', this.value)">
+                            <div class="text-sm font-bold text-gray-800">3200 <span class="text-[10px]">JPY</span></div>
+                            <div class="text-[10px] text-gray-400 line-through">預算 3000</div>
                         </div>
-                        <button onclick="deleteItem('budget', 1)" class="absolute -right-2 top-1/2 -translate-y-1/2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        
+                    </div>
+                    <div class="bg-white p-3 rounded-xl shadow-sm flex justify-between items-center relative">
+                        <div class="text-sm flex-1">
+                            <div class="font-bold text-gray-800">支出</div>
+                            <div class="text-[10px] text-gray-400">其他 | 現金</div>
+                        </div>
+                        <div class="text-right ml-2">
+                            <div class="text-sm font-bold text-gray-800">0 <span class="text-[10px]">TWD</span></div>
+                            <div class="text-[10px] text-gray-400 line-through">預算 0</div>
+                        </div>
+                        
                     </div></div>
         </div>
 
@@ -340,25 +352,18 @@
             </div>
             <div id="contacts-list" class="space-y-3">
                     <div class="bg-white p-4 rounded-xl shadow-sm relative">
-                        <input class="edit-input font-bold mb-1" value="台灣駐日代表處" onchange="updateData('contacts', 0, 'name', this.value)">
-                        <input class="edit-input text-xs text-gray-500 mb-2" value="駐外使館 | 政府機關" onchange="updateData('contacts', 0, 'item', this.value)">
-                        <input class="edit-input w-full text-center bg-indigo-50 text-indigo-600 font-bold py-2" value="N/A" onchange="updateData('contacts', 0, 'phone', this.value)">
-                        <input class="edit-input text-[10px] text-gray-400 mt-2 italic" value="護照遺失報案" onchange="updateData('contacts', 0, 'notes', this.value)">
-                        <button onclick="deleteItem('contacts', 0)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        <div class="font-bold text-gray-800">詹小姐</div>
+                        <div class="text-xs text-gray-500 mb-2">緊急聯絡人 | 家屬</div>
+                        <a href="tel:09xx-xxx-xxx" class="flex items-center justify-center gap-2 bg-indigo-50 text-indigo-600 py-2 rounded-lg text-sm font-bold"><i class="fas fa-phone"></i> 09xx-xxx-xxx</a>
+                        <div class="text-[10px] text-gray-400 mt-2 italic">備註: 備用聯絡人</div>
+                        
                     </div>
                     <div class="bg-white p-4 rounded-xl shadow-sm relative">
-                        <input class="edit-input font-bold mb-1" value="王先生" onchange="updateData('contacts', 1, 'name', this.value)">
-                        <input class="edit-input text-xs text-gray-500 mb-2" value="緊急聯絡人 | 家屬" onchange="updateData('contacts', 1, 'item', this.value)">
-                        <input class="edit-input w-full text-center bg-indigo-50 text-indigo-600 font-bold py-2" value="09xx-xxx-xxx" onchange="updateData('contacts', 1, 'phone', this.value)">
-                        <input class="edit-input text-[10px] text-gray-400 mt-2 italic" value="備用聯絡人" onchange="updateData('contacts', 1, 'notes', this.value)">
-                        <button onclick="deleteItem('contacts', 1)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl shadow-sm relative">
-                        <input class="edit-input font-bold mb-1" value="XX 旅平險" onchange="updateData('contacts', 2, 'name', this.value)">
-                        <input class="edit-input text-xs text-gray-500 mb-2" value="保險公司 | 保險代理" onchange="updateData('contacts', 2, 'item', this.value)">
-                        <input class="edit-input w-full text-center bg-indigo-50 text-indigo-600 font-bold py-2" value="0800-xxx" onchange="updateData('contacts', 2, 'phone', this.value)">
-                        <input class="edit-input text-[10px] text-gray-400 mt-2 italic" value="單號：POL12345" onchange="updateData('contacts', 2, 'notes', this.value)">
-                        <button onclick="deleteItem('contacts', 2)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
+                        <div class="font-bold text-gray-800">XX 旅遊平安險</div>
+                        <div class="text-xs text-gray-500 mb-2">保險公司 | 保險代理</div>
+                        <a href="tel:0800-xxx" class="flex items-center justify-center gap-2 bg-indigo-50 text-indigo-600 py-2 rounded-lg text-sm font-bold"><i class="fas fa-phone"></i> 0800-xxx</a>
+                        <div class="text-[10px] text-gray-400 mt-2 italic">備註: 單號：POL12345</div>
+                        
                     </div></div>
         </div>
 
@@ -395,18 +400,18 @@
   "overview": {
     "tripName": "日本東北之行",
     "destination": "東京",
-    "startDate": "2026-01-14",
-    "endDate": "2026-01-18",
+    "startDate": "2027-01-14",
+    "endDate": "2027-01-18",
     "companions": "全家",
-    "status": "籌備中"
+    "status": "規劃中"
   },
   "transport_stay": [
     {
       "category": "機票",
-      "item": "長榮航空 BR123",
-      "conf": "ABC12345",
-      "date": "2026-01-20 08:00",
-      "location": "桃園機場 T1",
+      "item": "長榮航空 BR184",
+      "conf": "到東京成田機場",
+      "date": "2026-01-20 07:55",
+      "location": "桃園機場 T2",
       "phone": "0800-xxx",
       "notes": "記得提前3小時到達"
     },
@@ -524,7 +529,7 @@
       "packed": false
     },
     {
-      "item": "行電轉接頭",
+      "item": "行動電源及充電線",
       "category": "電子",
       "priority": "必備",
       "qty": 2,
@@ -543,43 +548,46 @@
   "budget": [
     {
       "date": "2026-01-20",
-      "item": "機票",
+      "item": "來回機票",
       "category": "交通",
       "est": 15000,
-      "actual": 14500,
+      "actual": "67340",
       "currency": "TWD",
       "method": "信用卡",
       "notes": "早鳥優惠"
     },
     {
       "date": "2026-01-20",
-      "item": "晚餐",
+      "item": "午餐",
       "category": "食宿",
       "est": 3000,
       "actual": 3200,
       "currency": "JPY",
       "method": "現金",
       "notes": "包含飲料"
+    },
+    {
+      "date": "",
+      "item": "支出",
+      "category": "其他",
+      "est": 0,
+      "actual": 0,
+      "currency": "TWD",
+      "method": "現金",
+      "notes": ""
     }
   ],
   "contacts": [
     {
-      "item": "駐外使館",
-      "name": "台灣駐日代表處",
-      "phone": "N/A",
-      "relation": "政府機關",
-      "notes": "護照遺失報案"
-    },
-    {
       "item": "緊急聯絡人",
-      "name": "王先生",
+      "name": "詹小姐",
       "phone": "09xx-xxx-xxx",
       "relation": "家屬",
       "notes": "備用聯絡人"
     },
     {
       "item": "保險公司",
-      "name": "XX 旅平險",
+      "name": "XX 旅遊平安險",
       "phone": "0800-xxx",
       "relation": "保險代理",
       "notes": "單號：POL12345"
@@ -791,14 +799,6 @@
 
         function exportFullHTML() {
             const currentHTML = document.documentElement.outerHTML;
-            const dataScript = `<script>
-                const DEFAULT_DATA = ${JSON.stringify(tripData, null, 2)};
-                localStorage.setItem('trip_data_v2', JSON.stringify(DEFAULT_DATA));
-            <\/script>`;
-            
-            // This is a simplified approach. To truly embed data, we need to replace the DEFAULT_DATA object in the script.
-            // For this demo, the easiest way is to save the HTML but the user's data stays in the LocalStorage of the new file.
-            // Better: Create a blob with the modified script.
             
             let finalHTML = currentHTML;
             const dataRegex = /const DEFAULT_DATA = \{[\s\S]*?\};/;
@@ -817,6 +817,5 @@
             renderAll();
         };
     </script>
-
 
 </body></html>
