@@ -21,22 +21,7 @@
 <body class="pb-24">
 
     <!-- Header -->
-    <header class="bg-indigo-600 text-white p-4 sticky top-0 z-50 shadow-md flex justify-between items-center">
-        <div class="flex-1">
-            <div id="header-trip-name" class="text-xl font-bold truncate">日本東北之行</div>
-            <div id="header-trip-dest" class="text-xs opacity-80 truncate">📍 東京 | 2027-01-14 〜 2027-01-18</div>
-       <div class="flex gap-2 no-print">
-    <button onclick="setupGitHub()" class="bg-indigo-700 text-white p-2 rounded-full text-xs font-bold transition-all active:scale-95" title="設定 GitHub">
-        <i class="fas fa-cog"></i>
-    </button>
-    <button id="btn-mode" onclick="toggleEditMode()" class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
-        <i class="fas fa-unlock"></i> <span>閱讀模式</span>
-    </button>
-    <button onclick="syncToGitHub()" class="bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
-        <i class="fas fa-cloud-upload-alt"></i> <span class="hidden sm:inline">同步至 GitHub</span>
-    </button>
-</div>
-        // 在 <script> 的最上方加入 GitHub 相關設定檔
+     // 在 <script> 的最上方加入 GitHub 相關設定檔
 let ghConfig = JSON.parse(localStorage.getItem('gh_config')) || {
     token: '',
     owner: '', // GitHub 帳號名稱
@@ -57,6 +42,22 @@ function setupGitHub() {
         alert("GitHub 設定成功！現在你可以點擊「同步至 GitHub」直接更新網頁了。");
     }
 }
+    <header class="bg-indigo-600 text-white p-4 sticky top-0 z-50 shadow-md flex justify-between items-center">
+        <div class="flex-1">
+            <div id="header-trip-name" class="text-xl font-bold truncate">日本東北之行</div>
+            <div id="header-trip-dest" class="text-xs opacity-80 truncate">📍 東京 | 2027-01-14 〜 2027-01-18</div>
+       <div class="flex gap-2 no-print">
+    <button onclick="setupGitHub()" class="bg-indigo-700 text-white p-2 rounded-full text-xs font-bold transition-all active:scale-95" title="設定 GitHub">
+        <i class="fas fa-cog"></i>
+    </button>
+    <button id="btn-mode" onclick="toggleEditMode()" class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
+        <i class="fas fa-unlock"></i> <span>閱讀模式</span>
+    </button>
+    <button onclick="syncToGitHub()" class="bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
+        <i class="fas fa-cloud-upload-alt"></i> <span class="hidden sm:inline">同步至 GitHub</span>
+    </button>
+</div>
+       
     </header>
 
     <!-- Main Area -->
