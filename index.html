@@ -29,7 +29,9 @@
        <div class="flex gap-2 no-print">
     <button onclick="setupGitHub()" class="bg-indigo-700 text-white p-2 rounded-full text-xs font-bold transition-all active:scale-95" title="設定 GitHub">
         <i class="fas fa-cog"></i>
-         // 在最上方加入 GitHub 相關設定檔
+        
+    </button>
+    // 在最上方加入 GitHub 相關設定檔
 let ghConfig = JSON.parse(localStorage.getItem('gh_config')) || {
     token: '',
     owner: '', // GitHub 帳號名稱
@@ -49,8 +51,7 @@ function setupGitHub() {
         localStorage.setItem('gh_config', JSON.stringify(ghConfig));
         alert("GitHub 設定成功！現在你可以點擊「同步至 GitHub」直接更新網頁了。");
     }
-}
-    </button>
+}        
     <button id="btn-mode" onclick="toggleEditMode()" class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
         <i class="fas fa-unlock"></i> <span>閱讀模式</span>
     </button>
