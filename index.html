@@ -25,13 +25,17 @@
         <div class="flex-1">
             <div id="header-trip-name" class="text-xl font-bold truncate">日本東北之行</div>
             <div id="header-trip-dest" class="text-xs opacity-80 truncate">📍 東京 | 2027-01-14 〜 2027-01-18</div>
-        </div>
-        <div class="flex gap-2 no-print">
-            <button id="btn-mode" onclick="toggleEditMode()" class="bg-white text-indigo-600 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95 bg-orange-100 text-orange-600"><i class="fas fa-unlock"></i> <span>閱讀模式</span></button>
-            <button onclick="exportFullHTML()" class="bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
-                <i class="fas fa-save"></i> <span class="hidden sm:inline">儲存最新檔</span>
-            </button>
-        </div>
+      <div class="flex gap-2 no-print">
+    <button onclick="setupGitHub()" class="bg-indigo-700 text-white p-2 rounded-full text-xs font-bold transition-all active:scale-95" title="設定 GitHub">
+        <i class="fas fa-cog"></i>
+    </button>
+    <button id="btn-mode" onclick="toggleEditMode()" class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
+        <i class="fas fa-unlock"></i> <span>閱讀模式</span>
+    </button>
+    <button onclick="syncToGitHub()" class="bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
+        <i class="fas fa-cloud-upload-alt"></i> <span class="hidden sm:inline">同步至 GitHub</span>
+    </button>
+</div>
     </header>
 
     <!-- Main Area -->
@@ -395,6 +399,27 @@
     </nav>
 
     <script>
+        // 在最上方加入 GitHub 相關設定檔
+let ghConfig = JSON.parse(localStorage.getItem('gh_config')) || {
+    token: '',
+    owner: '', // GitHub 帳號名稱
+    repo: '',  // Repository 名稱
+    path: 'index.html' // 檔案在 repository 裡的路徑
+};
+
+// 設定 GitHub 參數的函式
+function setupGitHub() {
+    const owner = prompt("請輸入 GitHub 帳號 (Owner):", ghConfig.owner || "");
+    const repo = prompt("請輸入 Repository 名稱 (Repo):", ghConfig.repo || "");
+    const path = prompt("請輸入檔案路徑 (預設為 index.html):", ghConfig.path || "index.html");
+    const token = prompt("請貼上 GitHub Personal Access Token (PAT):", ghConfig.token || "");
+
+    if (owner && repo && token) {
+        ghConfig = { owner, repo, path, token };
+        localStorage.setItem('gh_config', JSON.stringify(ghConfig));
+        alert("GitHub 設定成功！現在你可以點擊「同步至 GitHub」直接更新網頁了。");
+    }
+}
         // --- Initial Data ---
         const DEFAULT_DATA = {
   "overview": {
@@ -797,20 +822,72 @@
             renderAll();
         }
 
-        function exportFullHTML() {
-            const currentHTML = document.documentElement.outerHTML;
-            
-            let finalHTML = currentHTML;
-            const dataRegex = /const DEFAULT_DATA = \{[\s\S]*?\};/;
-            finalHTML = finalHTML.replace(dataRegex, `const DEFAULT_DATA = ${JSON.stringify(tripData, null, 2)};`);
+       async function syncToGitHub() {
+    if (!ghConfig.token || !ghConfig.owner || !ghConfig.repo) {
+        alert("請先設定 GitHub Token 與 Repository 資訊！");
+        setupGitHub();
+        return;
+    }
 
-            const blob = new Blob([finalHTML], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `日本東北之行_${new Date().toISOString().split('T')[0]}.html`;
-            a.click();
+    const btn = event.currentTarget;
+    const originalText = btn.innerHTML;
+    btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> 同步中...`;
+    btn.disabled = true;
+
+    try {
+        // 1. 抓取目前 GitHub 上該檔案的 SHA (GitHub 覆蓋檔案時必須帶入 SHA)
+        const getUrl = `https://api.github.com/repos/${ghConfig.owner}/${ghConfig.repo}/contents/${ghConfig.path}`;
+        const getRes = await fetch(getUrl, {
+            headers: {
+                'Authorization': `token ${ghConfig.token}`,
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+
+        if (!getRes.ok) throw new Error("無法取得 GitHub 檔案資訊，請檢查 Repo 名稱或 Token 權限。");
+        const fileData = await getRes.json();
+        const sha = fileData.sha;
+
+        // 2. 替換 HTML 中的 DEFAULT_DATA 內容
+        let currentHTML = document.documentElement.outerHTML;
+        const dataRegex = /const DEFAULT_DATA = \{[\s\S]*?\};/;
+        let updatedHTML = currentHTML.replace(dataRegex, `const DEFAULT_DATA = ${JSON.stringify(tripData, null, 2)};`);
+
+        // 3. 將 HTML 轉成 Base64 編碼（GitHub API 要求）
+        // 處理中文 Base64 編碼問題
+        const utf8Bytes = new TextEncoder().encode(updatedHTML);
+        let binary = '';
+        utf8Bytes.forEach(b => binary += String.fromCharCode(b));
+        const contentBase64 = btoa(binary);
+
+        // 4. 發送 PUT 請求更新 GitHub 檔案
+        const putRes = await fetch(getUrl, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${ghConfig.token}`,
+                'Content-Type': 'application/json',
+                'Accept': 'application/vnd.github.v3+json'
+            },
+            body: JSON.stringify({
+                message: `Update trip data via Web App (${new Date().toLocaleString()})`,
+                content: contentBase64,
+                sha: sha
+            })
+        });
+
+        if (putRes.ok) {
+            alert("🎉 同步成功！GitHub Pages 將會在 1~2 分鐘內自動重新部署更新。");
+        } else {
+            const errData = await putRes.json();
+            alert("同步失敗：" + (errData.message || "未知錯誤"));
         }
+    } catch (err) {
+        alert("發生錯誤：" + err.message);
+    } finally {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+    }
+}
 
         window.onload = () => {
             updateHeader();
