@@ -141,7 +141,7 @@
         <div id="tab-food" class="tab-content">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-lg font-bold flex items-center gap-2 text-gray-800">
-                    <i class="fas fa-utensils text-indigo-500"></i> 餐廳預約
+                    <i class="fas fa-utensils text-indigo-500"></i> 美食預約
                 </h2>
                 <button onclick="addItem('food')" class="no-print bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs font-bold">+ 餐廳</button>
             </div>
@@ -153,7 +153,7 @@
                         </div>
                         <div class="text-xs text-gray-500 space-y-1">
                             <div>📅 <input class="edit-input w-24 inline-block" value="2026-01-20" onchange="updateData('restaurants', 0, 'date', this.value)"> <input class="edit-input w-16 inline-block" value="18:00" onchange="updateData('restaurants', 0, 'time', this.value)"> | 👥 <input class="edit-input w-12 inline-block" value="4" onchange="updateData('restaurants', 0, 'pax', this.value)">人</div>
-                            <div class="text-orange-600 font-medium">✨ 必點: <input class="edit-input" value="頂級特選牛" onchange="updateData('restaurants', 0, 'mustOrder', this.value)"></div>
+                            <div class="text-orange-600 font-medium">✨ 推薦: <input class="edit-input" value="頂級特選牛" onchange="updateData('restaurants', 0, 'mustOrder', this.value)"></div>
                             <div class="text-gray-400 italic font-light">確認碼: <input class="edit-input" value="Order_SXY123" onchange="updateData('restaurants', 0, 'conf', this.value)"></div>
                         </div>
                         <button onclick="deleteItem('restaurants', 0)" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>
