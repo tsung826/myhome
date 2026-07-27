@@ -515,7 +515,7 @@
                         </div>
                         <div class="text-xs text-gray-500 space-y-1">
                             <div>📅 ${isEditMode ? `<input class="edit-input w-24 inline-block" value="${item.date}" onchange="updateData('restaurants', ${idx}, 'date', this.value)">` : item.date} ${isEditMode ? `<input class="edit-input w-16 inline-block" value="${item.time}" onchange="updateData('restaurants', ${idx}, 'time', this.value)">` : item.time} | 👥 ${isEditMode ? `<input class="edit-input w-12 inline-block" value="${item.pax}" onchange="updateData('restaurants', ${idx}, 'pax', this.value)">` : item.pax}人</div>
-                            <div class="text-orange-600 font-medium">✨ 必點: ${isEditMode ? `<input class="edit-input" value="${item.mustOrder}" onchange="updateData('restaurants', ${idx}, 'mustOrder', this.value)">` : item.mustOrder}</div>
+                            <div class="text-orange-600 font-medium">✨ 推薦: ${isEditMode ? `<input class="edit-input" value="${item.mustOrder}" onchange="updateData('restaurants', ${idx}, 'mustOrder', this.value)">` : item.mustOrder}</div>
                             <div class="text-gray-400 italic font-light">確認碼: ${isEditMode ? `<input class="edit-input" value="${item.conf}" onchange="updateData('restaurants', ${idx}, 'conf', this.value)">` : item.conf}</div>
                         </div>
                         ${isEditMode ? `<button onclick="deleteItem('restaurants', ${idx})" class="absolute top-2 right-2 text-red-400 p-2"><i class="fas fa-trash"></i></button>` : ''}
