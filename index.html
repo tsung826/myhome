@@ -31,10 +31,10 @@
                 </button>
                 <button id="btn-mode" onclick="toggleEditMode()" class="px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95"><i class="fas fa-unlock"></i> <span>閱讀模式</span></button>
                 <!-- 修正 1：回復按鈕正常狀態，傳入 event -->
-                <button id="btn-sync" onclick="syncToGitHub(event)" class="bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95" disabled=""><i class="fas fa-spinner fa-spin"></i> 同步中...</button>
-                <!-- 修正 2：新增重置本機快取按鈕 -->
+                <button id="btn-sync" onclick="syncToGitHub(event)" class="bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95">
+                   <i class="fas fa-sync-alt"></i> <span>同步至 GitHub</span>
                 <button onclick="resetToRemote()" class="bg-red-500 text-white p-2 rounded-full text-xs font-bold transition-all active:scale-95" title="強制載入 GitHub 最新版資料">
-                    <i class="fas fa-redo-alt"></i>
+                <i class="fas fa-redo-alt"></i>
                 </button>
             </div>
         </div>
@@ -576,60 +576,56 @@
             renderAll();
         }
 
-        async function syncToGitHub(e) {
+       async function syncToGitHub(e) {
     if (!ghConfig.token || !ghConfig.owner || !ghConfig.repo) {
         alert("請先設定 GitHub Token 與 Repository 資訊！");
         setupGitHub();
         return;
     }
 
-    // 取得按鈕元素
     const btn = document.getElementById('btn-sync');
-    const originalContent = `<i class="fas fa-sync-alt"></i> <span>同步至 GitHub</span>`;
+    const originalHTML = `<i class="fas fa-sync-alt"></i> <span>同步至 GitHub</span>`;
     
-    // 進入載入狀態
+    // 進入 UI 載入狀態
     btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> 同步中...`;
     btn.disabled = true;
 
     try {
-        // 1. 向 GitHub API 取得最新檔案資訊與 SHA
+        // 1. 向 GitHub API 取得最新 SHA
         const getUrl = `https://api.github.com/repos/${ghConfig.owner}/${ghConfig.repo}/contents/${ghConfig.path}?t=${Date.now()}`;
         const getRes = await fetch(getUrl, {
             headers: {
                 'Authorization': `token ${ghConfig.token}`,
                 'Accept': 'application/vnd.github.v3+json'
             },
-            cache: 'no-store' // 避免快取舊的 SHA
+            cache: 'no-store'
         });
 
         if (!getRes.ok) {
-            throw new Error(`無法取得 GitHub 檔案 (HTTP ${getRes.status})，請檢查 Repo 名稱或 Token 權限。`);
+            throw new Error(`無法取得 GitHub 檔案 (HTTP ${getRes.status})`);
         }
 
         const fileData = await getRes.json();
         const sha = fileData.sha;
 
-        // 2. 準備要上傳的 HTML（先將按鈕還原成正常狀態，避免上傳了「轉圈中」的 HTML）
-        btn.innerHTML = originalContent;
-        btn.disabled = false;
-
+        // 2. 抓取當前頁面 HTML，並將按鈕區域強制替換回「正常狀態」再上傳
         let currentHTML = document.documentElement.outerHTML;
         
-        // 重新切換回載入狀態顯示
-        btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> 同步中...`;
-        btn.disabled = true;
+        // 關鍵防禦：確保寫入 GitHub 的 HTML 永遠是未轉圈的按鈕標籤
+        const cleanBtnHTML = `<button id="btn-sync" onclick="syncToGitHub(event)" class="bg-indigo-800 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1 transition-all active:scale-95"><i class="fas fa-sync-alt"></i> <span>同步至 GitHub</span></button>`;
+        currentHTML = currentHTML.replace(/<button id="btn-sync"[\s\S]*?<\/button>/, cleanBtnHTML);
 
-        // 3. 替換 DEFAULT_DATA 為當前最新資料
+        // 3. 替換 DEFAULT_DATA 資料
         const dataRegex = /const DEFAULT_DATA = \{[\s\S]*?\};/;
         let updatedHTML = currentHTML.replace(dataRegex, `const DEFAULT_DATA = ${JSON.stringify(tripData, null, 2)};`);
 
-        // 4. 文字轉 UTF-8 Base64
+        // 4. UTF-8 Base64 編碼
         const utf8Bytes = new TextEncoder().encode("<!DOCTYPE html>\n" + updatedHTML);
         let binary = '';
         utf8Bytes.forEach(b => binary += String.fromCharCode(b));
         const contentBase64 = btoa(binary);
 
-        // 5. 發送 PUT 請求更新至 GitHub
+        // 5. 上傳至 GitHub
         const putRes = await fetch(`https://api.github.com/repos/${ghConfig.owner}/${ghConfig.repo}/contents/${ghConfig.path}`, {
             method: 'PUT',
             headers: {
@@ -645,8 +641,7 @@
         });
 
         if (putRes.ok) {
-            alert("🎉 同步成功！網頁即將自動重新整理以套用最新版本。");
-            // 關鍵：同步成功後重新載入網頁，重置 DOM 與內部變數
+            alert("🎉 同步成功！網頁即將重新整理。");
             location.reload();
         } else {
             const errData = await putRes.json();
@@ -656,8 +651,7 @@
     } catch (err) {
         alert("❌ 同步失敗：" + err.message);
     } finally {
-        // 無論成功或失敗，保證恢復按鈕狀態，絕不持續轉圈
-        btn.innerHTML = originalContent;
+        btn.innerHTML = originalHTML;
         btn.disabled = false;
     }
 }
