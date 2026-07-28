@@ -400,7 +400,7 @@
       "actual": "67340",
       "currency": "TWD",
       "method": "信用卡",
-      "notes": "早鳥優惠"
+      "notes": ""
     },
     {
       "date": "",
@@ -604,7 +604,7 @@
                         <div class="text-sm flex-1">
                             ${isEditMode ? `<input class="edit-input font-bold mb-1" value="${item.item}" onchange="updateData('budget', ${idx}, 'item', this.value)">` : `<div class="font-bold text-gray-800">${item.item}</div>`}
                             ${isEditMode ? `<div class="flex gap-1"><input class="edit-input text-[10px] w-16" value="${item.category}" onchange="updateData('budget', ${idx}, 'category', this.value)"> <input class="edit-input text-[10px] w-16" value="${item.method}" onchange="updateData('budget', ${idx}, 'method', this.value)"></div>` : `<div class="text-[10px] text-gray-400">${item.category} | ${item.method}</div>`}
-                            ${isEditMode ? `<input class="edit-input text-[10px] text-gray-400 mt-2 italic" value="${item.notes}" onchange="updateData('contacts', ${idx}, 'notes', this.value)">` : `<div class="text-[10px] text-gray-400 mt-2 italic"> ${item.notes}</div>`}
+                            ${isEditMode ? `<input class="edit-input text-[10px] text-gray-400 mt-2 italic" value="${item.notes}" onchange="updateData('contacts', ${idx}, 'notes', this.value)">` : `<div class="text-[10px] text-gray-400 mt-2 italic">備註: ${item.notes}</div>`}
                         </div>
                         <div class="text-right ml-2">
                             ${isEditMode ? `<div class="flex items-center justify-end gap-1"><input class="edit-input w-16 text-right text-sm font-bold" value="${item.actual}" onchange="updateData('budget', ${idx}, 'actual', this.value)"> <input class="edit-input w-12 text-xs" value="${item.currency}" onchange="updateData('budget', ${idx}, 'currency', this.value)"></div>` : `<div class="text-sm font-bold text-gray-800">${item.actual} <span class="text-[10px]">${item.currency}</span></div>`}
